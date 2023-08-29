@@ -1,12 +1,261 @@
-h1,
-h2,
-.red {
-	color: red;
-	border: 1px solid firebrick;
-	background: green;
+
+:root {
+  --accent-clr-100: hsl(35, 77%, 62%);
+  --accent-clr-200: hsl(5, 85%, 63%);
+  --clr-100: hsl(36, 100%, 99%);
+  --clr-200: hsl(233, 8%, 79%);
+  --clr-300: hsl(236, 13%, 42%);
+  --clr-400: hsl(240, 100%, 5%);
 }
 
-h1{
-	color:blue;
-	padding :2rem;
+body {
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  color: var(--clr-300);
+  position: relative;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--clr-400);
+  line-height: 1.2;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+
+main {
+  margin-top: 1em;
+}
+
+header {
+  position: relative;
+  padding: 3em 0 2em;
+  width: 100%;
+}
+
+.primary-navigation {
+  text-align: left;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: var(--clr-100);
+  width: 250px;
+  min-height: 100vh;
+}
+
+.primary-navigation > ul {
+  flex-direction: column;
+  margin-top: 10em;
+}
+
+.primary-navigation li a {
+  font-size: 1rem;
+  color: var(--clr-300);
+  padding: 1em;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.primary-navigation li a:hover,
+.row__content--text > h4 a:hover {
+  color: var(--accent-clr-200);
+}
+
+.toggle-menu-btns {
+  cursor: pointer;
+}
+
+.close-btn {
+  width: 30px;
+  isolation: isolate;
+  z-index: 10;
+}
+
+.bg-img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.grid__col-1__content {
+  flex-direction: column;
+}
+
+.grid__col-1__content h1 {
+  margin-block: 0.5em;
+}
+
+.grid__col-1__content--text > p {
+  width: 92%;
+}
+
+.grid__col-1__content--text .accent-btn {
+  font-weight: 700;
+  color: var(--clr-100);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 2em 0 3.5em;
+  cursor: pointer;
+  transition: all 500ms ease-in-out;
+}
+
+.grid__col-1__content--text .accent-btn:hover {
+  background-color: var(--clr-400);
+}
+
+.grid__col-2 {
+  padding: 2em;
+  margin-bottom: 4em;
+  background-color: var(--clr-400);
+}
+
+.grid__col-2 h2 {
+  font-size: 2rem;
+  color: var(--accent-clr-100);
+  margin-bottom: 1em;
+}
+
+.grid__col-2 ul {
+padding-left: 0px;
+}
+
+.grid__col-2__content--text li:not(:last-of-type) {
+  margin-bottom: 2em;
+  border-bottom: 1px solid var(--clr-300);
+}
+
+.grid__col-2__content--text li > p {
+  color: var(--clr-200);
+  margin: 1em 0 2em;
+}
+
+.grid__col-2__content--text li:last-of-type > p {
+  margin-bottom: 0;
+}
+
+.grid__col-2__content--text li > h3 a {
+  font-weight: 800;
+  color: var(--clr-100);
+  transition: all 500ms ease-in-out;
+}
+
+.grid__col-2__content--text li > h3 a:hover {
+  color: var(--accent-clr-100);
+}
+
+.row ul {
+  flex-direction: column;
+  counter-reset: list;
+  gap: 2em;
+}
+
+.row ul li {
+  gap: 1.5em;
+}
+
+.row ul li > img {
+  max-width: 100px;
+  height: 150px;
+}
+
+.row__content--text > h4 {
+  margin: 0px;
+  margin-bottom: 0.5em;
+
+}
+
+.row__content--text > h4::before {
+  display: block;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--clr-200);
+  counter-increment: list;
+  content: "0" counter(list);
+  margin-bottom: 0.25em;
+}
+
+.row__content--text > h4 a {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--clr-400);
+  transition: all 500ms ease-in-out;
+  cursor: pointer;
+}
+
+.row__content--text > p {
+  line-height: 1.7;
+  max-width: 22ch;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-100);
+}
+.attribution a {
+  color: var(--accent-clr-100);
+}
+
+footer {
+  background: var(--clr-400);
+  padding: 2em;
+  margin-top: 5em;
+}
+
+
+/* ULTILITIES */
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.overlay {
+  --clr-overlay: hsla(240 100% 5% / 0.25);
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--clr-overlay);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content-sb {
+  justify-content: space-between;
+}
+
+.align-items-c {
+  align-items: center;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.accent-btn {
+  padding: 1em 2em;
+  background-color: var(--accent-clr-200);
 }
