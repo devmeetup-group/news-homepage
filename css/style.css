@@ -1,6 +1,8 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable selector-class-pattern */
 
+/* Fix styleLint */
+
 :root {
 	--accent-clr-100: hsl(35deg 77% 62%);
 	--accent-clr-200: hsl(5deg 85% 63%);
