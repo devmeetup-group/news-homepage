@@ -38,6 +38,10 @@ li {
 	list-style: none;
 }
 
+button {
+	cursor: pointer;
+}
+
 img {
 	width: 100%;
 }
@@ -60,6 +64,10 @@ header {
 	background-color: var(--clr-100);
 	width: 250px;
 	min-height: 100vh;
+}
+
+.primary-navigation--shown {
+	display: none;
 }
 
 .primary-navigation > ul {
@@ -264,11 +272,30 @@ footer {
 
 @media all and (min-width: 600px) {
 
-	/* .container {
-		width: min(80%, );
-	} */
+	.container {
+		width: min(80%, 1200px);
+	}
 
+	.hamburger-btn {
+		display: none;
+	}
 
+	.primary-navigation--shown {
+		display: block;
+	}
+
+	.primary-navigation--shown a {
+		transition-property: all;
+		transition-duration: 250ms;
+	}
+
+	.primary-navigation--shown .flex {
+		gap: 1em;
+	}
+
+	.primary-navigation--shown a:hover {
+		color: var(--accent-clr-200);
+	}
 
 	.two-columns {
 		display: grid;
