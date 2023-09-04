@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["stylelint"]
+  "cSpell.words": ["stylelint"],
+  "liveServer.settings.port": 5501
 }

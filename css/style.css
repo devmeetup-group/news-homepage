@@ -272,8 +272,7 @@ footer {
 	background-color: var(--accent-clr-200);
 }
 
-@media all and (min-width: 600px) {
-
+@media all and (width >= 56em) {
 	.container {
 		width: min(80%, 1200px);
 	}
@@ -327,5 +326,4 @@ footer {
 	li img {
 		align-self: center;
 	}
-
 }
