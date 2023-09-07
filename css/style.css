@@ -17,6 +17,7 @@ body {
 	font-size: 15px;
 	color: var(--clr-300);
 	position: relative;
+	overflow-x: hidden;
 }
 
 h1 {
@@ -53,7 +54,6 @@ main {
 }
 
 header {
-	position: relative;
 	padding: 3em 0 2em;
 	width: 100%;
 }
@@ -69,18 +69,32 @@ header {
 }
 
 .primary-navigation--shown {
-	display: none;
-}
-
-.primary-navigation > ul {
+	display: flex;
+	position: absolute;
 	flex-direction: column;
-	margin-top: 10em;
+	top: 0;
+	right: 0;
+	width: 70vw;
+	height: 100vh;
+	background-color: white;
+	justify-content: center;
+	transform: translate(70vw);
+	transition: all 0.3s ease-in;
 }
 
-.primary-navigation li a {
-	font-size: 1rem;
-	color: var(--clr-300);
-	padding: 1em;
+.primary-navigation--shown.active {
+	transform: translate(0);
+}
+
+.primary-navigation--shown ul {
+	flex-direction: column;
+	gap: 2rem;
+	font-weight: 600;
+}
+
+ul li a {
+	color: var(--clr-400);
+	font-size: 1.3rem;
 	cursor: pointer;
 	transition: all 500ms ease-in-out;
 }
@@ -98,6 +112,10 @@ header {
 	width: 30px;
 	isolation: isolate;
 	z-index: 10;
+	align-self: flex-end;
+	margin-top: -9rem;
+	margin-right: 40px;
+	cursor: pointer;
 }
 
 .bg-img {
@@ -245,8 +263,11 @@ footer {
 	width: 100%;
 	min-height: 100vh;
 	background-color: var(--clr-overlay);
+	display: none;
 }
-
+.over-active {
+	display: initial;
+}
 .flex {
 	display: flex;
 }
@@ -272,7 +293,7 @@ footer {
 	background-color: var(--accent-clr-200);
 }
 
-@media all and (width >= 56em) {
+@media all and (min-width: 800px) {
 	.container {
 		width: min(80%, 1200px);
 	}
@@ -281,17 +302,30 @@ footer {
 		display: none;
 	}
 
-	.primary-navigation--shown {
-		display: block;
-	}
-
 	.primary-navigation--shown a {
 		transition-property: all;
 		transition-duration: 250ms;
 	}
 
-	.primary-navigation--shown .flex {
+	.primary-navigation--shown {
+		position: relative;
+		background-color: transparent;
+		height: inherit;
+		width: inherit;
+		transform: translate(0);
+		align-items: center;
+		margin-top: 0;
+	}
+
+	.primary-navigation--shown ul {
+		display: flex;
+		align-items: center;
+		flex-direction: row;
 		gap: 1em;
+	}
+
+	.close-btn {
+		display: none;
 	}
 
 	.primary-navigation--shown a:hover {
