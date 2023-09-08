@@ -265,9 +265,11 @@ footer {
 	background-color: var(--clr-overlay);
 	display: none;
 }
+
 .over-active {
 	display: initial;
 }
+
 .flex {
 	display: flex;
 }
@@ -293,7 +295,7 @@ footer {
 	background-color: var(--accent-clr-200);
 }
 
-@media all and (min-width: 800px) {
+@media all and (width >= 800px) {
 	.container {
 		width: min(80%, 1200px);
 	}
